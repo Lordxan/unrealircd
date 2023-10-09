@@ -25,4 +25,4 @@ USER unrealircuser
 
 COPY --chown=unrealircuser:unrealircuser --from=builder /irc /irc
 
-ENTRYPOINT bash
+ENTRYPOINT ["/irc/unrealircd", "start"]
