@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "docker" ]
+  pull_request:
+    branches: [ "docker" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    environment: main
+    steps:
+    - uses: actions/checkout@v3
+    - name: Log in to the Container registry
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.PACKAGE_TOKEN }}
+    - name: Build the Docker image
+      run: DOCKER_BUILDKIT=1 docker build --tag=ghcr.io/$(echo ${GITHUB_REPOSITORY} | tr A-Z a-z) .
+    - name: Publish to GHCR
+      run: docker push ghcr.io/$(echo ${GITHUB_REPOSITORY} | tr A-Z a-z)
