@@ -1,0 +1,31 @@
+#
+# These are the settings saved from running './Config'.
+# Note that it is not recommended to edit config.settings by hand!
+# Chances are you misunderstand what a variable does or what the
+# supported values are. You better just re-run the ./Config script
+# and answer appropriately there, to get a correct config.settings
+# file.
+#
+BASEPATH="/irc"
+BINDIR="/irc/bin"
+DATADIR="/irc/data"
+CONFDIR="/irc/conf"
+MODULESDIR="/irc/modules"
+LOGDIR="/irc/logs"
+CACHEDIR="/irc/cache"
+DOCDIR="/irc/doc"
+TMPDIR="/irc/tmp"
+PRIVATELIBDIR="/irc/lib"
+MAXCONNECTIONS_REQUEST="auto"
+NICKNAMEHISTORYLENGTH="2000"
+GEOIP="classic"
+DEFPERM="0600"
+SSLDIR=""
+REMOTEINC=""
+CURLDIR=""
+NOOPEROVERRIDE=""
+OPEROVERRIDEVERIFY=""
+GENCERTIFICATE="1"
+SANITIZER=""
+EXTRAPARA=""
+ADVANCED=""
